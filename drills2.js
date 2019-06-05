@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 function makeStudentsReport(data) {
   let result = [];
@@ -20,7 +20,7 @@ console.log(makeStudentsReport(testData));
 function enrollInSummerSchool(students){
   
   students.forEach(function(obj){
-    obj.status='In Summer School'
+    obj.status='In Summer School';
   });
   return students;
 }
@@ -64,3 +64,41 @@ const data = [
 ];
 
 console.log(findById(data, 22));
+
+
+
+function validateKeys(object,expectedKeys){
+  if(Object.keys(object).length!==expectedKeys.length){
+    return false;
+  }
+  else{
+    for(let i=0;i<expectedKeys.length;i++){
+      if (!(expectedKeys[i] in object)){
+        return false;
+
+      }
+   
+    }
+    return true;
+   
+  }
+}
+
+const objectA = {
+  id: 2,
+  name: 'Jane Doe',
+  age: 34,
+  city: 'Chicago',
+};
+
+// running the function with `objectB` and `expectedKeys`
+// should return `false`
+const objectB = {
+  id: 3,
+  age: 33,
+  city: 'Peoria',
+};
+
+const testKeys = ['id', 'name', 'age', 'city'];
+
+console.log(validateKeys(objectB,testKeys));
