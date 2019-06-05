@@ -137,3 +137,34 @@ const hobbitLife = {
 }
 
 console.log(hobbitLife["meals"][3]);
+
+
+
+const scrubs1={
+  name:'jd',
+  jobTitle:'Doctor',
+};
+
+const scrubs2={
+  name:'turk',
+  jobTitle:'Surgeon'
+};
+
+const scrubs3={
+  name:'Carla',
+  jobTitle:'Nurse'
+};
+
+const scrubArray=[scrubs1,scrubs2,scrubs3];
+
+function displayArray(arr){
+  arr.forEach(function(item){
+    console.log(`${item.name} ${item.jobTitle}`);
+  });
+  
+}
+
+displayArray(scrubArray);
+
+
+
