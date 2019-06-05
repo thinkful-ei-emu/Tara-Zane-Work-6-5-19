@@ -44,3 +44,23 @@ const studentData = [
 
 
 console.log(enrollInSummerSchool(studentData));
+
+function findById(items, idNum) {
+  //find item with id idNum, return that item (object)
+  let result;
+  items.forEach(function(item) {
+    console.log(item);
+    if (item.id === idNum) {
+      result = item;
+    }
+  });
+  return result;
+}
+
+const data = [
+  { id: 22, foo: 'bar' },
+  { id: 28, foo: 'bizz' },
+  { id: 19, foo: 'bazz' },
+];
+
+console.log(findById(data, 22));
