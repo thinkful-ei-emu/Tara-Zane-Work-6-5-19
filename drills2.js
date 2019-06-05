@@ -113,3 +113,22 @@ const loaf = {
 
 console.log(loaf.flour, loaf.water);
 console.log(loaf.hydration());
+
+
+
+let myObj={
+  foo: 'bob',
+  bar: 'bar',
+  fum: 'fum',
+  quux: 'quux',
+  spam: 'spam',
+};
+
+function writeOver(obj){
+  for(const key in obj){
+    console.log(`${key} ${obj[key]}`);
+  }
+
+}
+writeOver(myObj);
+
