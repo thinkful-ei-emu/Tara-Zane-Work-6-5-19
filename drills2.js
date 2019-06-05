@@ -132,3 +132,8 @@ function writeOver(obj){
 }
 writeOver(myObj);
 
+const hobbitLife = {
+  meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
+}
+
+console.log(hobbitLife["meals"][3]);
