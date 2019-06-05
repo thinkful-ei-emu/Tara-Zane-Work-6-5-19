@@ -1,10 +1,12 @@
+
+'use strict';
 function createMyObject() {
   return {
     foo: 'bar',
     answerToUniverse: 42,
-    "olly olly": "oxen free",
+    'olly olly': 'oxen free',
     sayHello: function() {
-      return "Hello!";
+      return 'Hello!';
     }
   };
 }
@@ -12,3 +14,17 @@ function createMyObject() {
 const stuff = createMyObject();
 console.log(stuff);
 console.log(stuff.sayHello());
+
+
+function updateObject(obj){
+  obj.foo='foo';
+  obj.bar='bar';
+  obj.bizz='bizz';
+  obj.bang='bang';
+  
+  return obj
+}
+
+updateObject(stuff);
+
+console.log(stuff);
