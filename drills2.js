@@ -134,9 +134,9 @@ writeOver(myObj);
 
 const hobbitLife = {
   meals: ['breakfast', 'second breakfast', 'elevenses', 'lunch', 'afternoon tea', 'dinner', 'supper']
-}
+};
 
-console.log(hobbitLife["meals"][3]);
+console.log(hobbitLife['meals'][3]);
 
 
 
@@ -159,15 +159,15 @@ const scrubs3={
 };
 
 const scrubs4 = {
-  name: "Bob",
-  jobTitle: "Chief of Medicine"
-}
+  name: 'Bob',
+  jobTitle: 'Chief of Medicine'
+};
 
 const scrubArray=[scrubs1,scrubs2,scrubs3, scrubs4];
 
 function displayArray(arr){
   arr.forEach(function(item){
-    if ("boss" in item) {
+    if ('boss' in item) {
       console.log(`${item.name} ${item.jobTitle} reports to ${item.boss}.`);
     }
     else {
@@ -179,5 +179,40 @@ function displayArray(arr){
 
 displayArray(scrubArray);
 
+
+function decode(word){
+  const cipher={
+    a: 1,
+    b: 2,
+    c: 3,
+    d: 4,
+  };
+  if(!(word[0] in cipher)){
+    return ' ';
+  }
+  else{
+
+    return word[cipher[word[0]]];
+  }
+
+}
+
+function decodeWords(string){
+  const wordsArray=string.split(' ');
+  let result='';
+  wordsArray.forEach( function(word){
+    result+=decode(word);
+    
+
+  }
+  );
+  return result;
+
+  
+
+
+}
+
+console.log(decodeWords('craft block argon meter bells brown croon droop'));
 
 
