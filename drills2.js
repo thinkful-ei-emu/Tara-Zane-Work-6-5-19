@@ -191,8 +191,12 @@ function decode(word){
     return ' ';
   }
   else{
-
-    return word[cipher[word[0]]];
+    let firstLetter = word[0];
+    console.log(firstLetter);
+    let codeIndex = cipher[firstLetter];
+    console.log(codeIndex);
+    console.log(word[codeIndex]);
+    return word[codeIndex];
   }
 
 }
@@ -202,17 +206,9 @@ function decodeWords(string){
   let result='';
   wordsArray.forEach( function(word){
     result+=decode(word);
-    
-
   }
   );
   return result;
-
-  
-
-
 }
-
-console.log(decodeWords('craft block argon meter bells brown croon droop'));
 
 
