@@ -143,23 +143,36 @@ console.log(hobbitLife["meals"][3]);
 const scrubs1={
   name:'jd',
   jobTitle:'Doctor',
+  boss: 'Bob'
 };
 
 const scrubs2={
   name:'turk',
-  jobTitle:'Surgeon'
+  jobTitle:'Surgeon',
+  boss: 'Bob'
 };
 
 const scrubs3={
   name:'Carla',
-  jobTitle:'Nurse'
+  jobTitle:'Nurse',
+  boss: 'Bob'
 };
 
-const scrubArray=[scrubs1,scrubs2,scrubs3];
+const scrubs4 = {
+  name: "Bob",
+  jobTitle: "Chief of Medicine"
+}
+
+const scrubArray=[scrubs1,scrubs2,scrubs3, scrubs4];
 
 function displayArray(arr){
   arr.forEach(function(item){
-    console.log(`${item.name} ${item.jobTitle}`);
+    if ("boss" in item) {
+      console.log(`${item.name} ${item.jobTitle} reports to ${item.boss}.`);
+    }
+    else {
+      console.log(`${item.jobTitle} ${item.name} doesn't report to anybody.`);
+    }
   });
   
 }
