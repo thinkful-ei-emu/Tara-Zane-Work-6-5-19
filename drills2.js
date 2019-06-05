@@ -228,18 +228,18 @@ function createCharacter(name, nickname, race, origin, attack, defense, weapon) 
       let characterDamage = this.attack - character.defense;
       return `You opponent takes ${characterDamage} damage and you receive ${thisDamage} damage.`;
     }
-  }
+  };
 }
 
-const gandalf = createCharacter("Gandalf the White", "gandalf", 'Wizard', 'Middle Earth', 10, 6, "staff");
+const gandalf = createCharacter('Gandalf the White', 'gandalf', 'Wizard', 'Middle Earth', 10, 6, 'staff');
 
-const frodo = createCharacter("Frodo Baggins", "frodo", 'Hobbit', 'The Shire', 3, 2, "Sting and Barrow Blade");
+const frodo = createCharacter('Frodo Baggins', 'frodo', 'Hobbit', 'The Shire', 3, 2, 'Sting and Barrow Blade');
 
 const bilbo = createCharacter('Bilbo Baggins', 'Bilbo', 'Hobbit', 'The Shire', 2, 1, 'The One Ring');
 
-const aragorn = createCharacter('Aragorn son of Arathorn', "aragorn", 'Man', 'Dunnedain', 6, 8, 'Anduril');
+const aragorn = createCharacter('Aragorn son of Arathorn', 'aragorn', 'Man', 'Dunnedain', 6, 8, 'Anduril');
 
-const legolas = createCharacter("Legolas", "legolas", 'Elf', 'Woodland Realm', 8, 5, 'bow and arrow');
+const legolas = createCharacter('Legolas', 'legolas', 'Elf', 'Woodland Realm', 8, 5, 'bow and arrow');
 
 let characters = [gandalf, frodo, bilbo, aragorn, legolas];
 
@@ -247,8 +247,57 @@ characters.push(createCharacter('Arwen Undomiel', 'arwen', 'Half-Elf', 'Rivendel
 
 console.log(characters.find(element => element.nickname === 'aragorn').describe());
 
-let hobbitCharacters = characters.filter(element => element.race === "Hobbit");
+let hobbitCharacters = characters.filter(element => element.race === 'Hobbit');
 
 let strongCharacters = characters.filter(element => element.attack > 5);
 
 console.log(strongCharacters);
+
+
+const HEROES = [
+  { id: 1, name: 'Captain America', squad: 'Avengers' },
+  { id: 2, name: 'Iron Man', squad: 'Avengers' },
+  { id: 3, name: 'Spiderman', squad: 'Avengers' },
+  { id: 4, name: 'Superman', squad: 'Justice League' },
+  { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+  { id: 6, name: 'Aquaman', squad: 'Justice League' },
+  { id: 7, name: 'Hulk', squad: 'Avengers' },
+];
+
+function findOne(arr,query){
+  let didBreak;
+  for(let i=0;i<arr.length;i++){
+    for(let key in query){
+      if(key in arr[i]){
+        if(!(query[key]===arr[i][key])){
+          console.log('Does Not Match');
+          didBreak=true;
+          break;
+        }
+        else{
+          console.log('hello');
+
+        }
+      }
+      
+      else{
+        didBreak=true;
+        break;
+      }  
+      
+      
+      
+    }
+    if(!(didBreak)){
+      return arr[i];
+
+
+    }
+   
+   
+  }
+  return null;
+}
+
+findOne(HEROES, { id: 2, name: 'Aquaman' });
+
