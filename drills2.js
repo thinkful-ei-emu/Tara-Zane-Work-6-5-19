@@ -266,8 +266,12 @@ const HEROES = [
 
 function findOne(arr,query){
   let didBreak;
+  //looping through arr array
   for(let i=0;i<arr.length;i++){
+    didBreak=false;
+    // looping through the keys in query
     for(let key in query){
+      // if the key is in arr
       if(key in arr[i]){
         if(!(query[key]===arr[i][key])){
           console.log('Does Not Match');
@@ -299,5 +303,8 @@ function findOne(arr,query){
   return null;
 }
 
-findOne(HEROES, { id: 2, name: 'Aquaman' });
-
+console.log(findOne(HEROES, { id: 1 }));
+console.log(findOne(HEROES, { id: 10 }));
+console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
+console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
+console.log(findOne(HEROES, { squad: 'Justice League' }));
