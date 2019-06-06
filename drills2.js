@@ -308,3 +308,64 @@ console.log(findOne(HEROES, { id: 10 }));
 console.log(findOne(HEROES, { id: 2, name: 'Aquaman' }));
 console.log(findOne(HEROES, { id: 5, squad: 'Justice League' }));
 console.log(findOne(HEROES, { squad: 'Justice League' }));
+
+
+// Next problem
+
+const database = {
+  store: {
+    heroes: [
+      { id: 1, name: 'Captain America', squad: 'Avengers' },
+      { id: 2, name: 'Iron Man', squad: 'Avengers' },
+      { id: 3, name: 'Spiderman', squad: 'Avengers' },
+      { id: 4, name: 'Superman', squad: 'Justice League' },
+      { id: 5, name: 'Wonder Woman', squad: 'Justice League' },
+      { id: 6, name: 'Aquaman', squad: 'Justice League' },
+      { id: 7, name: 'Hulk', squad: 'Avengers' },
+    ]
+  },
+  findOne:function (query){
+    
+    let didBreak;
+    //looping through arr array
+    for(let i=0;i<this.store.heroes.length;i++){
+      didBreak=false;
+      // looping through the keys in query
+      for(let key in query){
+        // if the key is in arr
+        if(key in this.store.heroes[i]){
+          if(!(query[key]===this.store.heroes[i][key])){
+            console.log('Does Not Match');
+            didBreak=true;
+            break;
+          }
+          else{
+            console.log('hello');
+  
+          }
+        }
+        
+        else{
+          didBreak=true;
+          break;
+        }  
+        
+        
+        
+      }
+      if(!(didBreak)){
+        return this.store.heroes[i];
+  
+  
+      }
+     
+     
+    }
+    return null;
+  }
+};
+
+database.findOne({id:1});
+
+
+
